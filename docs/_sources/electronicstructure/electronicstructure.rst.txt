@@ -1,0 +1,96 @@
+Electronic Structure
+=============================
+
+
+After solving KS equation for a given geometry we have data on charge density,
+electrostatic potential, system eigenvalues, and eigenfunction
+
+
+
+
+In this step, we modify our previous input file as follows:
+
+.. code-block::
+
+  SystemName      Bulk Silicon
+  SystemLabel     Si     # all data obtained from this calculation has
+                         # systemLabel prefix and this label will be used for next analysis
+
+
+  NumberOfSpecies	        1
+  NumberOfAtoms           2
+
+
+  %block ChemicalSpeciesLabel
+    1  14  Si                      # atom label, atomic number, element symbol
+  %endblock ChemicalSpeciesLabel
+
+
+  LatticeConstant      5.41119733025 Ang    #here we define lattice-type
+  %block LatticeVectors     # for fcc structure basis vectors are
+  0.00  0.50  0.50
+  0.50  0.00  0.50
+  0.50  0.50  0.00
+  %endblock LatticeVectors
+
+
+  AtomicCoordinatesFormat          ScaledByLatticeVectors
+  %block AtomicCoordinatesAndAtomicSpecies
+    0.00  0.00  0.00        1
+    0.25  0.25  0.25        1
+  %endblock AtomicCoordinatesAndAtomicSpecies
+
+  %block kgrid_Monkhorst_Pack  # Brillouin Zone Sampling (automatic here)
+     4  0  0  0.5
+     0  4  0  0.5
+     0  0  4  0.5
+  %endblock kgrid_Monkhorst_Pack
+
+
+  ##################  Exchange-correlation  ####################################
+
+  XC.functional           GGA
+  XC.authors              PBE
+
+  #################  Mesh cutoff ###############################################
+  MeshCutoff              300 Ry
+
+
+
+  MaxSCFIterations        300
+
+  ###############  Save charge density, total and Hartree potential ############
+  saverho .true.
+  savetotalpotential .true.
+  saveelectrostaticpotential  .true.
+
+
+
+  #########################  Calculate DOS in the given range of energy ########
+  %block ProjectedDensityOfStates
+    -30.00  5.00  0.150 3000  eV
+  %endblock ProjectedDensityOfStates
+
+
+Once you have understood the input, run Siesta
+
+``siesta < Silicn.fdf | tee Silicn.out``
+
+After run you can see that DOS, PROJECTED DOS, charge, potential carefully
+wriiten in files called *$systemLabel*.DOS, *$systemLabel*.PDOS, *$systemLabel*.RHO
+...
+
+
+Some of above data like DOS is a regulat data file that can be plotted
+using a simple plot tools such as *gnuplot* (Or even exel !!!)
+
+But for more analysis some utilities are required, which will be
+discussed in next sections.
+
+.. toctree::
+  :maxdepth: 2
+
+  charge
+  dos
+  band
+  potential

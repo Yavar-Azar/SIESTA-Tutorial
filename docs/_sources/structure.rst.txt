@@ -1,0 +1,18 @@
+Structural Optimization
+========================
+
+- What is the space group?
+
+.. note::
+
+	When we use atomic relaxation/cell optimization?
+
+Cell Optimization
+--------------------
+
+
+
+
+
+Atomic position relaxation
+----------------------------

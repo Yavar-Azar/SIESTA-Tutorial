@@ -1,0 +1,141 @@
+Crystal structure Visualizers
+======================================
+
+
+There are many tools to visualize a CIF (Crystallographic Information Framework) file or
+convert it to the geometrical setup for various electronic structure codes.
+Here, we introduce some of the most widely used one,
+
+VESTA
+---------------------------------------
+
+Installation
+~~~~~~~~~~~~~~~~~~
+
+`VESTA <http://jp-minerals.org/vesta/en/>`_ to visualize cif file and create
+standard figures for publication.
+Download compressed code from `this link <http://jp-minerals.org/vesta/archives/3.4.8/VESTA-gtk3.tar.bz2>`_
+and extract it somewhere in your soft bank, you can open terminal in
+the directory of compressed file and type
+
+.. code-block:: bash
+
+  tar -xvf VESTA-gtk2.tar.bz2
+  cd VESTA-gtk2
+
+You can find a an executable ``VESTA`` file,
+which can be executed typing ``./VESTA`` in terminal.
+It is better to add file address to path,
+copy the address of binary file address with ``pwd`` command,
+
+Then add it to the end of your ``.bashrc`` file as follows
+
+.. code-block:: bash
+
+  export PATH=$PATH:/path/to/your/VESTA/file
+
+
+Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download a cif file (:download:`./CsPbI3.cif`) and open it by vesta
+
+.. code-block:: bash
+
+  VESTA CsPbI3.cif
+
+
+You can see several tools in the *Horizontal* and *Vertical* toolbar
+
+- Using tools in vertical toolbar measure some distances, angles, dihedrals in the structure
+- Try different display styles and visualize octahedral(s)
+- Show different lattice planes
+- Open cif files for GaAs :download:`./GaAs_prim.cif` and :download:`GaAs_conven.cif` with VESTA and read cell volume from output window
+
+ .. note::
+
+ 	Notice the ratio between volume of conventional and primitive cell, can you explain it?
+
+
+XCrySDen
+----------------------------------
+
+Download and Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`XCrySDen <http://www.xcrysden.org/>`_ is a tool visualize xsf, QW in/outputs
+(pwi, pwo) files and volumetric data included in ``.cube|.xsf`` files
+
+Download `Linux x86_64 binary packages <http://www.xcrysden.org/download/xcrysden-1.6.2-linux_x86_64-shared.tar.gz>`_
+and extract it to a directory, as you did for VESTA and put ``xcrysden`` binary
+in path
+
+.. code-block:: bashrc
+
+    export PATH=$PATH:/path/to/your/xcrysden/file
+
+Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Here we can compare primitive and conventional cell for GaAs diamond structure.
+Get two xsf files :download:`GaAs_prim.xsf`  and :download:`GaAs_conven.xsf` and
+open files
+
+.. code-block:: language
+
+  xcrysden --xsf GaAs_prim.xsf
+
+- Go to the ``display`` menu and check different utilities.
+- From ``Tools`` open ``k-path selection`` check BZ for both conventional and primitive cells
+- Select a k-path in BZ and save your selected path in a text file
+
+
+.. figure:: ./Figs/xcrysden.png
+   :align: center
+
+
+
+
+
+
+
+GDIS
+------------------------------------
+
+`gdis <https://github.com/arohl/gdis>`_ to visualize siesta input files (fdf) Using gdis save a cif file as a siesta input.
+
+
+CIF2CELL
+--------------------------------------
+CIF2Cell is a tool to generate the geometrical setup for various
+electronic structure codes from a CIF (Crystallographic Information Framework) file.
+The program currently supports output for a number of popular electronic structure programs,
+including ABINIT, ASE, CASTEP, CP2K, CPMD, CRYSTAL09, Elk, EMTO, Exciting,
+Fleur, FHI-aims, Hutsepot, MOPAC, Quantum Espresso, RSPt, Siesta, SPR-KKR, VASP.
+Also exports some related formats like .coo, .cfg and .xyz-files.
+
+
+
+
+Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download code from this `link <https://sourceforge.net/projects/cif2cell/>`_ and extract downloaded file
+Go to the source directory you can see a ``setup.py`` and Then
+
+.. code-block:: language
+
+  python setup.py install --prefix=where/you/want/it
+
+
+after installation check arguments with ``cif2cell -h``
+
+
+
+Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Generate QE and SIESTA input file from the downloaded cif files
+
+.. code-block:: language
+
+  cif2cell GaAs_conven.cif -p siesta
+
+you can find siesta input file in the same directory

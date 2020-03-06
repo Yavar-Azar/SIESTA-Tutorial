@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Density of states &mdash; SIESTA-Toturial 00.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Band structure" href="band.html" />
+    <link rel="prev" title="Charge analysis" href="charge.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SIESTA-Toturial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../crystal/crystal.html">Crystallography and Visualization tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/inputgeneration.html">Structure of the input file</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="electronicstructure.html">Electronic Structure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="charge.html">Charge analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Density of states</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hands-on-total-and-projected-dos">Hands-on (Total and Projected DOS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hands-on-local-dos">Hands-on (Local DOS)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="band.html">Band structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="potential.html">Electrostatic potential</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structure/structure.html">Structural Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../md/md.html">Molecular Dynamics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SIESTA-Toturial</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="electronicstructure.html">Electronic Structure</a> &raquo;</li>
+        
+      <li>Density of states</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/electronicstructure/dos.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="density-of-states">
+<h1>Density of states<a class="headerlink" href="#density-of-states" title="Permalink to this headline">¶</a></h1>
+<p>The density of states (DOS) is defined by</p>
+<div class="math notranslate nohighlight">
+\[g(\varepsilon) = \sum\limits_n \langle\psi_n|\psi_n\rangle
+\delta(\varepsilon-\varepsilon_n),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varepsilon_n\)</span> is the eigenvalue of the eigenstate <span class="math notranslate nohighlight">\(|\psi_n\rangle\)</span>.</p>
+<p>For a given orthonormal basis</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{rlrl} g(\varepsilon) &amp;= \sum\limits_i g_i(\varepsilon)
+,&amp; g_i(\varepsilon) &amp;= \sum\limits_n \langle \psi_n | i \rangle \langle i
+| \psi_n \rangle \delta(\varepsilon - \varepsilon_n)\\
+g(\varepsilon) &amp;= \int\!\mathrm{d}r g(r, \varepsilon),&amp;
+g(r, \varepsilon) &amp;= \sum\limits_n \langle\psi_n | r \rangle \langle r |
+\psi_n \rangle \delta(\varepsilon - \varepsilon_n) \end{array}\end{split}\]</div>
+<p>using completeness of the selected basis sets</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(1 = \sum\limits_i | i \rangle\langle i |\)</span> and <span class="math notranslate nohighlight">\(1 =\int\!\mathrm{d}r |r\rangle\langle r|\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(g_i(\varepsilon)\)</span> is called the <em>projected density of states</em> (PDOS), and
+<span class="math notranslate nohighlight">\(g(r, \varepsilon)\)</span> the <em>local density of states</em> (LDOS).</p>
+</div></blockquote>
+<p>From above equations it can easily be shown that integration of DOS below the
+Fermi energy gives total number of electrons (N)</p>
+<div class="math notranslate nohighlight">
+\[\int\!\mathrm{d}\varepsilon\, n_F(\varepsilon) g(\varepsilon) = N\]</div>
+<p>and</p>
+<p>integrating of the LDOS multiplied by a Fermi distribution gives the electron density</p>
+<div class="math notranslate nohighlight">
+\[\int\!\mathrm{d}\varepsilon\, n_F(\varepsilon) g(r, \varepsilon) = n(r)\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In above definition k-dependence of eigenfunctions dropped for simplicity,
+for more accurate  definition, one can refer to “<em>Quantum Chemistry of Solids: The LCAO First Principles Treatment
+of Crystals</em>” by  Robert A. Evarestov</p>
+</div>
+<div class="math notranslate nohighlight">
+\[      N=2\sum\limits_{i=1}^M \int\limits_{-\infty}^{\varepsilon_F}\frac{1}{V_B}\int\limits_{BZ}\theta(\varepsilon-\varepsilon_i({\bf k}))d{\bf k}
+=\int\limits_{-\infty}^{\varepsilon_F}g(\varepsilon)d\varepsilon = \sum\limits_i\int\limits_{-\infty}^{\varepsilon_F}g_i(\varepsilon)d\varepsilon\]</div>
+<div class="section" id="hands-on-total-and-projected-dos">
+<h2>Hands-on (Total and Projected DOS)<a class="headerlink" href="#hands-on-total-and-projected-dos" title="Permalink to this headline">¶</a></h2>
+<p>Here,  we continue our post process on scf run of Silicon example
+open your input <a class="reference download internal" download="" href="../_downloads/a3cd25e8667316c1b3950fa03f8ce3c9/Sipdos.fdf"><code class="xref download docutils literal notranslate"><span class="pre">./Sipdos.fdf</span></code></a> and edit Label and energy range in pdos block
+(You can skip this step)</p>
+<ul class="simple">
+<li><p>Step 1. run siesta using above input file</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">siesta</span> <span class="pre">&lt;</span> <span class="pre">Sipdos.fdf</span> <span class="pre">&gt;</span> <span class="pre">Sipdos.out</span></code></p>
+<ul class="simple">
+<li><p>Step 2. Plot Si.DOS (<code class="docutils literal notranslate"><span class="pre">*</span></code>.DOS) with your own plot software (python libraries</p></li>
+</ul>
+<blockquote>
+<div><p>are highly recommended for extra analysis  you can download my simple python
+script <a class="reference download internal" download="" href="../_downloads/12bc2e47aa32efab0ed73aa13e54314c/plotdos.py"><code class="xref download docutils literal notranslate"><span class="pre">./plotdos.py</span></code></a> and create your dos plot (It is python3 !)</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">plotdos.py</span> <span class="pre">-f</span> <span class="pre">Sipost.DOS</span> <span class="pre">-fe</span> <span class="pre">-3.6</span></code></p>
+<p>This will create  <em>test.png</em> file</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/test.png"><img alt="../_images/test.png" src="../_images/test.png" style="width: 530.4px; height: 302.6px;" /></a>
+</div>
+<ul class="simple">
+<li><p>step 3.Calculate number of states (electrons) in your system</p></li>
+<li><p>step 4. calculate projected DOS over atomic orbitals, selected atoms,</p></li>
+</ul>
+<p>atomic groups, …
+run <code class="docutils literal notranslate"><span class="pre">fmpdos</span></code> commad and answer questions one-by-one</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Input file name <span class="o">(</span>PDOS<span class="o">)</span>:
+<span class="hll">Si.PDOS    <span class="c1">#name of your PDOS file</span>
+</span>Output file name :
+<span class="hll">Siatom2.pdos  <span class="c1"># choose a meaningful name for your output</span>
+</span>Extract data <span class="k">for</span> atom index <span class="o">(</span>enter atom NUMBER, or <span class="m">0</span> to <span class="k">select</span> all<span class="o">)</span>,
+or <span class="k">for</span> all atoms of given species <span class="o">(</span>enter its chemical LABEL<span class="o">)</span>:
+<span class="hll"><span class="m">2</span>  <span class="c1"># atom index here</span>
+</span>Extract data <span class="k">for</span> <span class="nv">n</span><span class="o">=</span> ... <span class="o">(</span><span class="m">0</span> <span class="k">for</span> all n <span class="o">)</span>:
+<span class="hll"><span class="m">0</span>  <span class="c1"># all orbitals in selected atom</span>
+</span></pre></div>
+</div>
+</div></blockquote>
+<p>This run will generates a file named ` Siatom2.pdos` which can</p>
+<ul class="simple">
+<li><p>Step 3.</p></li>
+<li><p>Step 4.</p></li>
+<li><p>step 5</p></li>
+</ul>
+</div>
+<div class="section" id="hands-on-local-dos">
+<h2>Hands-on (Local DOS)<a class="headerlink" href="#hands-on-local-dos" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="band.html" class="btn btn-neutral float-right" title="Band structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="charge.html" class="btn btn-neutral float-left" title="Charge analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yavar T. Azar
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

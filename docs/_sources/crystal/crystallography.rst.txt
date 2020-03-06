@@ -1,0 +1,176 @@
+Basics of Crystallography
+=================================
+
+
+.. role:: yimp
+
+.. role:: ynice
+
+.. role:: yfade
+
+
+Before trying to do any ab-initio calculation with solid state packages
+one should review basic concepts in solid state physics
+
+
+#. Crystal structure
+#. Primitive vs conventional cell
+#. Space group and point groups
+#. Reciprocal lattice/Brillouin zone
+
+
+In crystallography, crystal structure is a description of the ordered arrangement of atoms,
+ions or molecules in a crystalline material. Ordered structures occur from the intrinsic nature of the constituent particles to
+form symmetric patterns that repeat along the principal directions of three-dimensional space in matter.
+
+The smallest group of particles in the material that constitutes this repeating pattern is the unit
+cell of the structure. The unit cell completely reflects the symmetry and structure of the entire crystal,
+which is built up by repetitive translation of the unit cell along its principal axes.
+The translation vectors define the nodes of the :yimp:`Bravais lattice`." *Wikipedia*
+
+Lattice
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A crystal structure is formed only when the group of atoms is arranged identically at the lattice point.
+The group of atoms or molecules is called a :yimp:`basis`. Lattice point is actually an **imaginary concept**.
+
+.. figure:: ./Figs/Basis.jpg
+   :width: 220 px
+   :align: center
+
+
+Unit cell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Unit cell can be considered as the building block of a crystal.
+It has the same symmetry as the entire crystal.
+When we arrange the unit cell in 3D, we get the bulk crystal.
+In other words it can be described as the smallest volume which when repeated
+in all direction gives the crystal. The three edges a, b, c along the axis and
+angle between them :math:`\alpha`, :math:`\beta` and :math:`\gamma` is termed as lattice parameters.
+In 3D it is better to consider a parallelepiped as unit cell. For more details see :cite:`kittel2005`
+
+:yimp:`Bravais lattice` A collection of points in which the neighborhood of each
+point is the same as the neighborhood of every other point under some translation is
+called a Bravais lattice.
+
+
+:yimp:`Lattice vectors` represent the edges of a unit cell of a lattice. They are not necessarily
+mutually orthogonal. A linear combination of lattice vectors, with integral parameters,
+can represent every vector that belongs to the lattice.
+
+.. math::
+
+   \vec{T}_{mno} = m \, \vec{a}_1 + n \, \vec{a}_2 + o \,\vec{a}_3 \qquad m,n,o \in \mathbb{Z} \; \label{eq:threeDimTranslVector}
+
+
+On the other hand, contents of the unit cell is described by means of appropriate
+set of :yimp:`basis vectors` :math:`\vec{d_1}, \vec{d_2}, \vec{d_3}, ...., \vec{d_n}`
+where *n* is the number of all atoms in the unit cell. The position of the atom
+can be written as
+
+.. math::
+
+	\vec{R}=\vec{T}+\vec{d_\nu}
+
+
+**Example** Write down *d* vectors for the GaAs in its conventional and primitive cell
+
+
+.. important::
+
+	What is the difference between Primitive and Conventional cell?
+
+
+:yimp:`Wigner-Seitz cell` The Wigner-Seitz cell is a polyhedron obtained by connecting
+a lattice point P to all other lattice points and drawing the planes
+perpendicular to these connecting lines and passing through
+their midpoints. (Visualize it with xcrysden for your own cif file)
+
+
+
+.. figure:: Figs/WScell.png
+   :align: center
+   :width: 400 px
+
+
+Crystal symmetry
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The space groups in three dimensions are made from combinations of the
+``32 crystallographic point groups`` with the ``14 Bravais lattices``
+, each of the latter belonging to one of 7 lattice systems.
+
+
+.. figure:: ./Figs/bravis.jpg
+   :align: center
+
+
+
+:yimp:`Bilbao Crystallographic Server` is an open access website offering online
+crystallographic database and programs aimed at analyzing, calculating and
+visualizing problems of structural and mathematical crystallography,
+solid state physics and structural chemistry.
+`Visit Bilbao webpage <https://www.cryst.ehu.es/>`_
+
+
+
+Lattice planes and directions in crystals
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:yimp:`Miller indices` form a notation system in crystallography
+for planes in crystal (Bravais) lattices.
+In particular, a family of lattice planes is determined
+by three integers h, k, and l, the Miller indices.
+
+
+.. figure:: ./Figs/latticeplane.jpeg
+   :align: center
+
+
+Distance between planes for each system can be calculated from
+
+.. figure:: ./Figs/spacingdbetweenthenetplanes.png
+   :align: center
+
+
+
+Reciprocal lattice
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For the study of crystals, besides the direct lattice in the ordinary space,
+it is important to consider also the reciprocal lattice in the dual (or reciprocal) space.
+Given a crystal with primitive translation vectors :math:`\vec{a_1}, \vec{a_2}, \vec{a_3}`
+in the direct space, we consider the three primitive vectors :math:`\vec{g_1}, \vec{g_2}, \vec{g_3}`
+in the :yimp:`reciprocal space`, defined by the relations
+
+.. math::
+
+	\vec{a_i}\cdot \vec{g_j}=2\pi\delta_{ij}
+
+:yimp:`Reciprocal lattice vector`
+
+  .. math::
+
+  	\vec{G_m}=m_1\vec{g_1}+m_1\vec{g_2}+m_1\vec{g_3}
+
+:yimp:`Brillouin zone` is a uniquely defined primitive cell in reciprocal space.
+
+A Brillouin zone is a particular choice of the unit cell of the
+reciprocal lattice. It is defined as the Wigner-Seitz cell (also
+called Dirichlet or Voronoi domain of influence) of the reciprocal
+lattice. It is constructed as the set of points enclosed by the Bragg
+planes, the planes perpendicular to a connection line from the origin
+to each lattice point and passing through the midpoint (see figure).
+Alternatively, it is defined as the set of points closer to the origin
+than to any other reciprocal lattice point. :ynice:`The whole reciprocal space may
+be covered without overlap with copies of such a Brillouin zone`.
+
+.. figure:: ./Figs/BZ.png
+  :align: center
+  :width: 200px
+
+
+.. bibliography:: ../references.bib
+  :list: enumerated
+  :style: unsrt

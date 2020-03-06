@@ -1,0 +1,131 @@
+Density of states
+===============================
+
+The density of states (DOS) is defined by
+
+.. math::
+
+  g(\varepsilon) = \sum\limits_n \langle\psi_n|\psi_n\rangle
+  \delta(\varepsilon-\varepsilon_n),
+
+where :math:`\varepsilon_n` is the eigenvalue of the eigenstate :math:`|\psi_n\rangle`.
+
+For a given orthonormal basis
+
+.. math::
+
+  \begin{array}{rlrl} g(\varepsilon) &= \sum\limits_i g_i(\varepsilon)
+  ,& g_i(\varepsilon) &= \sum\limits_n \langle \psi_n | i \rangle \langle i
+  | \psi_n \rangle \delta(\varepsilon - \varepsilon_n)\\
+  g(\varepsilon) &= \int\!\mathrm{d}r g(r, \varepsilon),&
+  g(r, \varepsilon) &= \sum\limits_n \langle\psi_n | r \rangle \langle r |
+  \psi_n \rangle \delta(\varepsilon - \varepsilon_n) \end{array}
+
+using completeness of the selected basis sets
+
+ :math:`1 = \sum\limits_i | i \rangle\langle i |` and :math:`1 =\int\!\mathrm{d}r |r\rangle\langle r|`.
+
+ :math:`g_i(\varepsilon)`` is called the *projected density of states* (PDOS), and
+ :math:`g(r, \varepsilon)`` the *local density of states* (LDOS).
+
+
+From above equations it can easily be shown that integration of DOS below the
+Fermi energy gives total number of electrons (N)
+
+.. math::
+
+  \int\!\mathrm{d}\varepsilon\, n_F(\varepsilon) g(\varepsilon) = N
+
+
+and
+
+integrating of the LDOS multiplied by a Fermi distribution gives the electron density
+
+.. math::
+
+  \int\!\mathrm{d}\varepsilon\, n_F(\varepsilon) g(r, \varepsilon) = n(r)
+
+.. note::
+  In above definition k-dependence of eigenfunctions dropped for simplicity,
+  for more accurate  definition, one can refer to "*Quantum Chemistry of Solids: The LCAO First Principles Treatment
+  of Crystals*" by  Robert A. Evarestov
+
+.. math::
+
+	N=2\sum\limits_{i=1}^M \int\limits_{-\infty}^{\varepsilon_F}\frac{1}{V_B}\int\limits_{BZ}\theta(\varepsilon-\varepsilon_i({\bf k}))d{\bf k}
+  =\int\limits_{-\infty}^{\varepsilon_F}g(\varepsilon)d\varepsilon = \sum\limits_i\int\limits_{-\infty}^{\varepsilon_F}g_i(\varepsilon)d\varepsilon
+
+
+
+
+
+Hands-on (Total and Projected DOS)
+------------------------------------------------
+
+Here,  we continue our post process on scf run of Silicon example
+open your input :download:`./Sipdos.fdf` and edit Label and energy range in pdos block
+(You can skip this step)
+
+
+- Step 1. run siesta using above input file
+
+``siesta < Sipdos.fdf > Sipdos.out``
+
+- Step 2. Plot Si.DOS (``*``.DOS) with your own plot software (python libraries
+ are highly recommended for extra analysis  you can download my simple python
+ script :download:`./plotdos.py` and create your dos plot (It is python3 !)
+
+``python plotdos.py -f Sipost.DOS -fe -3.6``
+
+This will create  *test.png* file
+
+.. figure:: ./test.png
+   :scale: 20 %
+
+
+
+- step 3.Calculate number of states (electrons) in your system
+
+
+
+
+- step 4. calculate projected DOS over atomic orbitals, selected atoms,
+atomic groups, ...
+run ``fmpdos`` commad and answer questions one-by-one
+
+  .. code-block:: bash
+     :emphasize-lines: 2,4,7,9
+
+     Input file name (PDOS):
+     Si.PDOS    #name of your PDOS file
+     Output file name :
+     Siatom2.pdos  # choose a meaningful name for your output
+     Extract data for atom index (enter atom NUMBER, or 0 to select all),
+     or for all atoms of given species (enter its chemical LABEL):
+     2  # atom index here
+     Extract data for n= ... (0 for all n ):
+     0  # all orbitals in selected atom
+
+
+
+
+This run will generates a file named ` Siatom2.pdos` which can
+
+- Step 3.
+
+
+- Step 4.
+
+
+- step 5
+
+
+
+
+
+
+
+
+
+Hands-on (Local DOS)
+----------------------

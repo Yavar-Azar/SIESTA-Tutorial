@@ -1,0 +1,30 @@
+Electronic Structure
+=============================
+
+
+After solving KS equation for a given geometry we have data on charge density,
+electrostatic potential, system eigenvalues, and eigenfunction
+
+
+Charge density Analysis
+-------------------------
+:math:`n({\bf r})` as an scalar function of position can be written in so-called
+**cube** format
+
+
+
+Electrostatic potential
+-----------------------------
+
+Density of States and Projected Density of States
+-------------------------------------------------
+
+ *g(E)dE* the number of one-electron levels between *E* and *E+dE*
+:math:`g(E)=\frac{1}{N_{\vec k}}\sum_i\sum_{\vec{k}}\delta(E-E_i({\vec{k}}))`
+
+
+
+
+
+Band structure
+-------------------------

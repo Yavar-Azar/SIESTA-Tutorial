@@ -1,0 +1,44 @@
+Crystallography and Visualization tools
+===========================================================
+
+
+
+Crystal Structure and CIF format
+--------------------------------
+"In crystallography, crystal structure is a description of the ordered arrangement of atoms,
+ions or molecules in a crystalline material. Ordered structures occur from the intrinsic nature of the constituent particles to
+form symmetric patterns that repeat along the principal directions of three-dimensional space in matter.
+
+The smallest group of particles in the material that constitutes this repeating pattern is the unit
+cell of the structure. The unit cell completely reflects the symmetry and structure of the entire crystal,
+which is built up by repetitive translation of the unit cell along its principal axes.
+The translation vectors define the nodes of the **Bravais lattice**." *Wikipedia*
+
+
+.. figure:: Figs/bravis.jpg
+   :align: center
+
+
+
+There are many tools to visualize a CIF (Crystallographic Information Framework) file or
+convert it to the geometrical setup for various electronic structure codes.
+Here, we introduce some of the most widely used one,
+
+GUI Visualizers
+    * `VESTA <http://jp-minerals.org/vesta/en/>`_to visualize cif file and create standard figures for publication
+    .. Download a cif file and open it by VEST, Try to show dihedrals and detect different planes.
+    * `XCrySDen <http://www.xcrysden.org/>`_ to visualize xsf, cube, pwi, ... files
+    * `gdis <https://github.com/arohl/gdis>`_ ti visualize siesta input files (fdf)
+    .. Using gdis save a cif file as a siesta input.
+
+Command line convertor
+    * `CIF2CELL <https://sourceforge.net/projects/cif2cell/>`_
+    after installation you can concert any cif file to siesta input file
+    ::
+      $ cif2cell example.cif -p siesta
+    this command creates a fdf file with same name as cif file
+
+.. topic:: Exercise
+  Download :file:`CsPbI3.fdf` and use cif2cell to generate structural file
+  after `cif2cell CsPbI3.cif -p siesta`
+  you can find the CsPbI3.fdf

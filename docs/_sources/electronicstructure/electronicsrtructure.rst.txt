@@ -1,0 +1,11 @@
+Electronic structure
+================================
+
+electronic structure will be discussed here
+
+.. toctree::
+  :maxdepth:
+
+  density
+  dos
+  band

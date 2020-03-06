@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Siesta Tutorial &mdash; SIESTA-Toturial 00.01 documentation</title>
+  <title>Crystallography and Visualization tools &mdash; SIESTA-Toturial 00.01 documentation</title>
   
 
   
@@ -36,10 +36,10 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Crystallography and Visualization tools" href="crystal/crystal.html" /> 
+    <link rel="next" title="Structural Optimization" href="structure.html" />
+    <link rel="prev" title="Siesta Tutorial" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -53,7 +53,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> SIESTA-Toturial
+            <a href="index.html" class="icon icon-home"> SIESTA-Toturial
           
 
           
@@ -83,12 +83,14 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="crystal/crystal.html">Crystallography and Visualization tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="input/inputgeneration.html">Structure of the input file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="electronicstructure/electronicstructure.html">Electronic Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure/structure.html">Structural Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="md/md.html">Molecular Dynamics</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Crystallography and Visualization tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#crystal-structure-and-cif-format">Crystal Structure and CIF format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Structural Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electronic.html">Electronic Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="md.html">Molecular Dynamics</a></li>
 </ul>
 
             
@@ -103,7 +105,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">SIESTA-Toturial</a>
+          <a href="index.html">SIESTA-Toturial</a>
         
       </nav>
 
@@ -132,15 +134,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Siesta Tutorial</li>
+      <li>Crystallography and Visualization tools</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/crystal.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -177,32 +179,44 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="siesta-tutorial">
-<h1>Siesta Tutorial<a class="headerlink" href="#siesta-tutorial" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="crystal/crystal.html">Crystallography and Visualization tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="crystal/crystallography.html">Basics of Crystallography</a></li>
-<li class="toctree-l2"><a class="reference internal" href="crystal/visualizers.html">Crystal structure Visualizers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="input/inputgeneration.html">Structure of the input file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="electronicstructure/electronicstructure.html">Electronic Structure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="electronicstructure/charge.html">Charge analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="electronicstructure/dos.html">Density of states</a></li>
-<li class="toctree-l2"><a class="reference internal" href="electronicstructure/band.html">Band structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="electronicstructure/potential.html">Electrostatic potential</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="structure/structure.html">Structural Optimization</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="structure/structure.html#cell-optimization">Cell Optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure/structure.html#atomic-position-relaxation">Atomic position relaxation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="md/md.html">Molecular Dynamics</a></li>
-</ul>
+<div class="section" id="crystallography-and-visualization-tools">
+<h1>Crystallography and Visualization tools<a class="headerlink" href="#crystallography-and-visualization-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="crystal-structure-and-cif-format">
+<h2>Crystal Structure and CIF format<a class="headerlink" href="#crystal-structure-and-cif-format" title="Permalink to this headline">¶</a></h2>
+<p>“In crystallography, crystal structure is a description of the ordered arrangement of atoms,
+ions or molecules in a crystalline material. Ordered structures occur from the intrinsic nature of the constituent particles to
+form symmetric patterns that repeat along the principal directions of three-dimensional space in matter.</p>
+<p>The smallest group of particles in the material that constitutes this repeating pattern is the unit
+cell of the structure. The unit cell completely reflects the symmetry and structure of the entire crystal,
+which is built up by repetitive translation of the unit cell along its principal axes.
+The translation vectors define the nodes of the <strong>Bravais lattice</strong>.” <em>Wikipedia</em></p>
+<div class="figure align-center">
+<img alt="_images/bravis.jpg" src="_images/bravis.jpg" />
 </div>
-<style> .red {color:red} </style><style> .red {color:orange} </style></div>
+<p>There are many tools to visualize a CIF (Crystallographic Information Framework) file or
+convert it to the geometrical setup for various electronic structure codes.
+Here, we introduce some of the most widely used one,</p>
+<dl>
+<dt>GUI Visualizers</dt><dd><ul class="simple">
+<li><p><a href="#id1"><span class="problematic" id="id2">`</span></a>VESTA &lt;<a class="reference external" href="http://jp-minerals.org/vesta/en/">http://jp-minerals.org/vesta/en/</a>&gt;`_to visualize cif file and create standard figures for publication</p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.xcrysden.org/">XCrySDen</a> to visualize xsf, cube, pwi, … files</p></li>
+<li><p><a class="reference external" href="https://github.com/arohl/gdis">gdis</a> ti visualize siesta input files (fdf)</p></li>
+</ul>
+</dd>
+<dt>Command line convertor</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://sourceforge.net/projects/cif2cell/">CIF2CELL</a></p></li>
+</ul>
+<p>after installation you can concert any cif file to siesta input file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cif2cell example.cif -p siesta
+</pre></div>
+</div>
+<p>this command creates a fdf file with same name as cif file</p>
+</dd>
+</dl>
+</div>
+</div>
 
 
            </div>
@@ -212,8 +226,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="crystal/crystal.html" class="btn btn-neutral float-right" title="Crystallography and Visualization tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="structure.html" class="btn btn-neutral float-right" title="Structural Optimization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Siesta Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

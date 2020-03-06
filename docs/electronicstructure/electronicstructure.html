@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Electronic Structure &mdash; SIESTA-Toturial 00.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Charge analysis" href="charge.html" />
+    <link rel="prev" title="Structure of the input file" href="../input/inputgeneration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SIESTA-Toturial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../crystal/crystal.html">Crystallography and Visualization tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/inputgeneration.html">Structure of the input file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Electronic Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="charge.html">Charge analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dos.html">Density of states</a></li>
+<li class="toctree-l2"><a class="reference internal" href="band.html">Band structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="potential.html">Electrostatic potential</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structure/structure.html">Structural Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../md/md.html">Molecular Dynamics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SIESTA-Toturial</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Electronic Structure</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/electronicstructure/electronicstructure.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="electronic-structure">
+<h1>Electronic Structure<a class="headerlink" href="#electronic-structure" title="Permalink to this headline">¶</a></h1>
+<p>After solving KS equation for a given geometry we have data on charge density,
+electrostatic potential, system eigenvalues, and eigenfunction</p>
+<p>In this step, we modify our previous input file as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SystemName</span>      <span class="n">Bulk</span> <span class="n">Silicon</span>
+<span class="n">SystemLabel</span>     <span class="n">Si</span>     <span class="c1"># all data obtained from this calculation has</span>
+                       <span class="c1"># systemLabel prefix and this label will be used for next analysis</span>
+
+
+<span class="n">NumberOfSpecies</span>               <span class="mi">1</span>
+<span class="n">NumberOfAtoms</span>           <span class="mi">2</span>
+
+
+<span class="o">%</span><span class="n">block</span> <span class="n">ChemicalSpeciesLabel</span>
+  <span class="mi">1</span>  <span class="mi">14</span>  <span class="n">Si</span>                      <span class="c1"># atom label, atomic number, element symbol</span>
+<span class="o">%</span><span class="n">endblock</span> <span class="n">ChemicalSpeciesLabel</span>
+
+
+<span class="n">LatticeConstant</span>      <span class="mf">5.41119733025</span> <span class="n">Ang</span>    <span class="c1">#here we define lattice-type</span>
+<span class="o">%</span><span class="n">block</span> <span class="n">LatticeVectors</span>     <span class="c1"># for fcc structure basis vectors are</span>
+<span class="mf">0.00</span>  <span class="mf">0.50</span>  <span class="mf">0.50</span>
+<span class="mf">0.50</span>  <span class="mf">0.00</span>  <span class="mf">0.50</span>
+<span class="mf">0.50</span>  <span class="mf">0.50</span>  <span class="mf">0.00</span>
+<span class="o">%</span><span class="n">endblock</span> <span class="n">LatticeVectors</span>
+
+
+<span class="n">AtomicCoordinatesFormat</span>          <span class="n">ScaledByLatticeVectors</span>
+<span class="o">%</span><span class="n">block</span> <span class="n">AtomicCoordinatesAndAtomicSpecies</span>
+  <span class="mf">0.00</span>  <span class="mf">0.00</span>  <span class="mf">0.00</span>        <span class="mi">1</span>
+  <span class="mf">0.25</span>  <span class="mf">0.25</span>  <span class="mf">0.25</span>        <span class="mi">1</span>
+<span class="o">%</span><span class="n">endblock</span> <span class="n">AtomicCoordinatesAndAtomicSpecies</span>
+
+<span class="o">%</span><span class="n">block</span> <span class="n">kgrid_Monkhorst_Pack</span>  <span class="c1"># Brillouin Zone Sampling (automatic here)</span>
+   <span class="mi">4</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mf">0.5</span>
+   <span class="mi">0</span>  <span class="mi">4</span>  <span class="mi">0</span>  <span class="mf">0.5</span>
+   <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">4</span>  <span class="mf">0.5</span>
+<span class="o">%</span><span class="n">endblock</span> <span class="n">kgrid_Monkhorst_Pack</span>
+
+
+<span class="c1">##################  Exchange-correlation  ####################################</span>
+
+<span class="n">XC</span><span class="o">.</span><span class="n">functional</span>           <span class="n">GGA</span>
+<span class="n">XC</span><span class="o">.</span><span class="n">authors</span>              <span class="n">PBE</span>
+
+<span class="c1">#################  Mesh cutoff ###############################################</span>
+<span class="n">MeshCutoff</span>              <span class="mi">300</span> <span class="n">Ry</span>
+
+
+
+<span class="n">MaxSCFIterations</span>        <span class="mi">300</span>
+
+<span class="c1">###############  Save charge density, total and Hartree potential ############</span>
+<span class="n">saverho</span> <span class="o">.</span><span class="n">true</span><span class="o">.</span>
+<span class="n">savetotalpotential</span> <span class="o">.</span><span class="n">true</span><span class="o">.</span>
+<span class="n">saveelectrostaticpotential</span>  <span class="o">.</span><span class="n">true</span><span class="o">.</span>
+
+
+
+<span class="c1">#########################  Calculate DOS in the given range of energy ########</span>
+<span class="o">%</span><span class="n">block</span> <span class="n">ProjectedDensityOfStates</span>
+  <span class="o">-</span><span class="mf">30.00</span>  <span class="mf">5.00</span>  <span class="mf">0.150</span> <span class="mi">3000</span>  <span class="n">eV</span>
+<span class="o">%</span><span class="n">endblock</span> <span class="n">ProjectedDensityOfStates</span>
+</pre></div>
+</div>
+<p>Once you have understood the input, run Siesta</p>
+<p><code class="docutils literal notranslate"><span class="pre">siesta</span> <span class="pre">&lt;</span> <span class="pre">Silicn.fdf</span> <span class="pre">|</span> <span class="pre">tee</span> <span class="pre">Silicn.out</span></code></p>
+<p>After run you can see that DOS, PROJECTED DOS, charge, potential carefully
+wriiten in files called <em>$systemLabel</em>.DOS, <em>$systemLabel</em>.PDOS, <em>$systemLabel</em>.RHO
+…</p>
+<p>Some of above data like DOS is a regulat data file that can be plotted
+using a simple plot tools such as <em>gnuplot</em> (Or even exel !!!)</p>
+<p>But for more analysis some utilities are required, which will be
+discussed in next sections.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="charge.html">Charge analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="charge.html#grid2cube">grid2cube</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dos.html">Density of states</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dos.html#hands-on-total-and-projected-dos">Hands-on (Total and Projected DOS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dos.html#hands-on-local-dos">Hands-on (Local DOS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="band.html">Band structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential.html">Electrostatic potential</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="charge.html" class="btn btn-neutral float-right" title="Charge analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../input/inputgeneration.html" class="btn btn-neutral float-left" title="Structure of the input file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yavar T. Azar
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

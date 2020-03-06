@@ -1,0 +1,50 @@
+SystemName      Bulk Silicon
+SystemLabel     Si
+NumberOfSpecies	        1
+NumberOfAtoms           2
+%block ChemicalSpeciesLabel
+  1  14  Si
+%endblock ChemicalSpeciesLabel
+
+LatticeConstant      5.43 Ang
+%block LatticeVectors
+  0.00  0.50  0.50
+  0.50  0.00  0.50
+  0.50  0.50  0.00
+%endblock LatticeVectors
+
+AtomicCoordinatesFormat          ScaledByLatticeVectors
+%block AtomicCoordinatesAndAtomicSpecies
+  0.00  0.00  0.00        1
+  0.25  0.25  0.25        1
+%endblock AtomicCoordinatesAndAtomicSpecies
+
+%block kgrid_Monkhorst_Pack
+   4  0  0  0.5
+   0  4  0  0.5
+   0  0  4  0.5
+%endblock kgrid_Monkhorst_Pack
+
+
+XC.functional           GGA
+XC.authors              PBE
+
+MeshCutoff              400 Ry
+
+MaxSCFIterations        300
+DM.NumberPulay          3 
+DM.MixingWeight         0.2000
+DM.UseSaveDM            .false.
+DM.Tolerance            0.0001
+ElectronicTemperature   0.075 eV
+SCF.MixAfterConvergence .false.
+
+%block ProjectedDensityOfStates
+  -20.00  5.00  0.150 3000  eV
+%endblock ProjectedDensityOfStates
+
+%PDOS.kgrid_Monkhorst_Pack
+   60  0  0  0.5
+    0 60  0  0.5
+    0  0 60  0.5
+%end PDOS.kgrid_Monkhorst_Pack

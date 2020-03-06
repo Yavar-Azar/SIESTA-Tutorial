@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basics of Crystallography &mdash; SIESTA-Toturial 00.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Crystal structure Visualizers" href="visualizers.html" />
+    <link rel="prev" title="Crystallography and Visualization tools" href="crystal.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SIESTA-Toturial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="crystal.html">Crystallography and Visualization tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics of Crystallography</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lattice">Lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit-cell">Unit cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crystal-symmetry">Crystal symmetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lattice-planes-and-directions-in-crystals">Lattice planes and directions in crystals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reciprocal-lattice">Reciprocal lattice</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualizers.html">Crystal structure Visualizers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../input/inputgeneration.html">Structure of the input file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electronicstructure/electronicstructure.html">Electronic Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../structure/structure.html">Structural Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../md/md.html">Molecular Dynamics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SIESTA-Toturial</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="crystal.html">Crystallography and Visualization tools</a> &raquo;</li>
+        
+      <li>Basics of Crystallography</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/crystal/crystallography.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="basics-of-crystallography">
+<h1>Basics of Crystallography<a class="headerlink" href="#basics-of-crystallography" title="Permalink to this headline">¶</a></h1>
+<p>Before trying to do any ab-initio calculation with solid state packages
+one should review basic concepts in solid state physics</p>
+<ol class="arabic simple">
+<li><p>Crystal structure</p></li>
+<li><p>Primitive vs conventional cell</p></li>
+<li><p>Space group and point groups</p></li>
+<li><p>Reciprocal lattice/Brillouin zone</p></li>
+</ol>
+<p>In crystallography, crystal structure is a description of the ordered arrangement of atoms,
+ions or molecules in a crystalline material. Ordered structures occur from the intrinsic nature of the constituent particles to
+form symmetric patterns that repeat along the principal directions of three-dimensional space in matter.</p>
+<p>The smallest group of particles in the material that constitutes this repeating pattern is the unit
+cell of the structure. The unit cell completely reflects the symmetry and structure of the entire crystal,
+which is built up by repetitive translation of the unit cell along its principal axes.
+The translation vectors define the nodes of the <span class="yimp">Bravais lattice</span>.” <em>Wikipedia</em></p>
+<div class="section" id="lattice">
+<h2>Lattice<a class="headerlink" href="#lattice" title="Permalink to this headline">¶</a></h2>
+<p>A crystal structure is formed only when the group of atoms is arranged identically at the lattice point.
+The group of atoms or molecules is called a <span class="yimp">basis</span>. Lattice point is actually an <strong>imaginary concept</strong>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Basis.jpg"><img alt="../_images/Basis.jpg" src="../_images/Basis.jpg" style="width: 220px;" /></a>
+</div>
+</div>
+<div class="section" id="unit-cell">
+<h2>Unit cell<a class="headerlink" href="#unit-cell" title="Permalink to this headline">¶</a></h2>
+<p>Unit cell can be considered as the building block of a crystal.
+It has the same symmetry as the entire crystal.
+When we arrange the unit cell in 3D, we get the bulk crystal.
+In other words it can be described as the smallest volume which when repeated
+in all direction gives the crystal. The three edges a, b, c along the axis and
+angle between them <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> is termed as lattice parameters.
+In 3D it is better to consider a parallelepiped as unit cell. For more details see <span class="bibtex" id="id1">[kittel2005]</span></p>
+<p><span class="yimp">Bravais lattice</span> A collection of points in which the neighborhood of each
+point is the same as the neighborhood of every other point under some translation is
+called a Bravais lattice.</p>
+<p><span class="yimp">Lattice vectors</span> represent the edges of a unit cell of a lattice. They are not necessarily
+mutually orthogonal. A linear combination of lattice vectors, with integral parameters,
+can represent every vector that belongs to the lattice.</p>
+<div class="math notranslate nohighlight">
+\[\vec{T}_{mno} = m \, \vec{a}_1 + n \, \vec{a}_2 + o \,\vec{a}_3 \qquad m,n,o \in \mathbb{Z} \; \label{eq:threeDimTranslVector}\]</div>
+<p>On the other hand, contents of the unit cell is described by means of appropriate
+set of <span class="yimp">basis vectors</span> <span class="math notranslate nohighlight">\(\vec{d_1}, \vec{d_2}, \vec{d_3}, ...., \vec{d_n}\)</span>
+where <em>n</em> is the number of all atoms in the unit cell. The position of the atom
+can be written as</p>
+<div class="math notranslate nohighlight">
+\[\vec{R}=\vec{T}+\vec{d_\nu}\]</div>
+<p><strong>Example</strong> Write down <em>d</em> vectors for the GaAs in its conventional and primitive cell</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>What is the difference between Primitive and Conventional cell?</p>
+</div>
+<p><span class="yimp">Wigner-Seitz cell</span> The Wigner-Seitz cell is a polyhedron obtained by connecting
+a lattice point P to all other lattice points and drawing the planes
+perpendicular to these connecting lines and passing through
+their midpoints. (Visualize it with xcrysden for your own cif file)</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/WScell.png"><img alt="../_images/WScell.png" src="../_images/WScell.png" style="width: 400px;" /></a>
+</div>
+</div>
+<div class="section" id="crystal-symmetry">
+<h2>Crystal symmetry<a class="headerlink" href="#crystal-symmetry" title="Permalink to this headline">¶</a></h2>
+<p>The space groups in three dimensions are made from combinations of the
+<code class="docutils literal notranslate"><span class="pre">32</span> <span class="pre">crystallographic</span> <span class="pre">point</span> <span class="pre">groups</span></code> with the <code class="docutils literal notranslate"><span class="pre">14</span> <span class="pre">Bravais</span> <span class="pre">lattices</span></code>
+, each of the latter belonging to one of 7 lattice systems.</p>
+<div class="figure align-center">
+<img alt="../_images/bravis.jpg" src="../_images/bravis.jpg" />
+</div>
+<p><span class="yimp">Bilbao Crystallographic Server</span> is an open access website offering online
+crystallographic database and programs aimed at analyzing, calculating and
+visualizing problems of structural and mathematical crystallography,
+solid state physics and structural chemistry.
+<a class="reference external" href="https://www.cryst.ehu.es/">Visit Bilbao webpage</a></p>
+</div>
+<div class="section" id="lattice-planes-and-directions-in-crystals">
+<h2>Lattice planes and directions in crystals<a class="headerlink" href="#lattice-planes-and-directions-in-crystals" title="Permalink to this headline">¶</a></h2>
+<p><span class="yimp">Miller indices</span> form a notation system in crystallography
+for planes in crystal (Bravais) lattices.
+In particular, a family of lattice planes is determined
+by three integers h, k, and l, the Miller indices.</p>
+<div class="figure align-center">
+<img alt="../_images/latticeplane.jpeg" src="../_images/latticeplane.jpeg" />
+</div>
+<p>Distance between planes for each system can be calculated from</p>
+<div class="figure align-center">
+<img alt="../_images/spacingdbetweenthenetplanes.png" src="../_images/spacingdbetweenthenetplanes.png" />
+</div>
+</div>
+<div class="section" id="reciprocal-lattice">
+<h2>Reciprocal lattice<a class="headerlink" href="#reciprocal-lattice" title="Permalink to this headline">¶</a></h2>
+<p>For the study of crystals, besides the direct lattice in the ordinary space,
+it is important to consider also the reciprocal lattice in the dual (or reciprocal) space.
+Given a crystal with primitive translation vectors <span class="math notranslate nohighlight">\(\vec{a_1}, \vec{a_2}, \vec{a_3}\)</span>
+in the direct space, we consider the three primitive vectors <span class="math notranslate nohighlight">\(\vec{g_1}, \vec{g_2}, \vec{g_3}\)</span>
+in the <span class="yimp">reciprocal space</span>, defined by the relations</p>
+<div class="math notranslate nohighlight">
+\[\vec{a_i}\cdot \vec{g_j}=2\pi\delta_{ij}\]</div>
+<p><span class="yimp">Reciprocal lattice vector</span></p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\vec{G_m}=m_1\vec{g_1}+m_1\vec{g_2}+m_1\vec{g_3}\]</div>
+</div></blockquote>
+<p><span class="yimp">Brillouin zone</span> is a uniquely defined primitive cell in reciprocal space.</p>
+<p>A Brillouin zone is a particular choice of the unit cell of the
+reciprocal lattice. It is defined as the Wigner-Seitz cell (also
+called Dirichlet or Voronoi domain of influence) of the reciprocal
+lattice. It is constructed as the set of points enclosed by the Bragg
+planes, the planes perpendicular to a connection line from the origin
+to each lattice point and passing through the midpoint (see figure).
+Alternatively, it is defined as the set of points closer to the origin
+than to any other reciprocal lattice point. <span class="ynice">The whole reciprocal space may
+be covered without overlap with copies of such a Brillouin zone</span>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/BZ.png"><img alt="../_images/BZ.png" src="../_images/BZ.png" style="width: 200px;" /></a>
+</div>
+<ol class="arabic simple" id="bibtex-bibliography-crystal/crystallography-0" start="1">
+<li><p>Charles Kittel. Introduction to solid state physics, john wiley &amp; sons. <em>New York</em>, pages 402, 2005.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="visualizers.html" class="btn btn-neutral float-right" title="Crystal structure Visualizers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="crystal.html" class="btn btn-neutral float-left" title="Crystallography and Visualization tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yavar T. Azar
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
