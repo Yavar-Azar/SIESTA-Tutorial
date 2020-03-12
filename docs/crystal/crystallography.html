@@ -89,6 +89,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Basics of Crystallography</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#lattice">Lattice</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unit-cell">Unit cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#crystal-symmetry">Crystal symmetry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lattice-planes-and-directions-in-crystals">Lattice planes and directions in crystals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#reciprocal-lattice">Reciprocal lattice</a></li>
@@ -201,17 +202,22 @@ one should review basic concepts in solid state physics</p>
 <li><p>Space group and point groups</p></li>
 <li><p>Reciprocal lattice/Brillouin zone</p></li>
 </ol>
-<p>In crystallography, crystal structure is a description of the ordered arrangement of atoms,
-ions or molecules in a crystalline material. Ordered structures occur from the intrinsic nature of the constituent particles to
-form symmetric patterns that repeat along the principal directions of three-dimensional space in matter.</p>
-<p>The smallest group of particles in the material that constitutes this repeating pattern is the unit
-cell of the structure. The unit cell completely reflects the symmetry and structure of the entire crystal,
-which is built up by repetitive translation of the unit cell along its principal axes.
+<p>In crystallography, <span class="yimp">crystal structure</span> is a description of the ordered
+arrangement of atoms, ions or molecules in a crystalline material.
+Ordered structures occur from the intrinsic nature of the constituent particles
+to form symmetric patterns that repeat along the principal directions of three-dimensional space in matter.</p>
+<p>The smallest group of particles in the material that constitutes this
+repeating pattern is the <span class="yimp">unit cell</span> of the structure.
+The unit cell completely reflects the symmetry and structure
+of the entire crystal, which is built up by repetitive translation of
+the unit cell along its principal axes.
 The translation vectors define the nodes of the <span class="yimp">Bravais lattice</span>.” <em>Wikipedia</em></p>
 <div class="section" id="lattice">
 <h2>Lattice<a class="headerlink" href="#lattice" title="Permalink to this headline">¶</a></h2>
-<p>A crystal structure is formed only when the group of atoms is arranged identically at the lattice point.
-The group of atoms or molecules is called a <span class="yimp">basis</span>. Lattice point is actually an <strong>imaginary concept</strong>.</p>
+<p>A crystal structure is formed only when the group of atoms is arranged
+identically at the lattice point. The group of atoms or molecules
+is called a <span class="yimp">basis</span>.
+Lattice point is actually an <strong>imaginary concept</strong>.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/Basis.jpg"><img alt="../_images/Basis.jpg" src="../_images/Basis.jpg" style="width: 220px;" /></a>
 </div>
@@ -251,6 +257,10 @@ their midpoints. (Visualize it with xcrysden for your own cif file)</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/WScell.png"><img alt="../_images/WScell.png" src="../_images/WScell.png" style="width: 400px;" /></a>
 </div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Open a cif (<a class="reference download internal" download="" href="../_downloads/f589ab1c8838c3c6937a15339029d4ce/CsPbI3.cif"><code class="xref download docutils literal notranslate"><span class="pre">./CsPbI3.cif</span></code></a>) file and find <span class="yimp">lattice constants</span> and <span class="yimp">basis vector</span></p>
 </div>
 <div class="section" id="crystal-symmetry">
 <h2>Crystal symmetry<a class="headerlink" href="#crystal-symmetry" title="Permalink to this headline">¶</a></h2>
@@ -297,7 +307,7 @@ in the <span class="yimp">reciprocal space</span>, defined by the relations</p>
 <p><span class="yimp">Brillouin zone</span> is a uniquely defined primitive cell in reciprocal space.</p>
 <p><strong>Relation between lattice planes and reciprocal lattice</strong></p>
 <p>Therefore, it appears that the moduli of the perpendicular vectors <span class="math notranslate nohighlight">\(\sigma_{hkl}\)</span>
-reciprocal to the interplanar spacings. The end points of these vectors
+reciprocal to the <span class="yimp">interplanar spacings</span>. The end points of these vectors
 (blue arrows in figure below) also produce a periodic lattice that,
 due to this reciprocal property, is known as the reciprocal lattice of the original direct lattice.
 The reciprocal points obtained in this way (green points in figure below)

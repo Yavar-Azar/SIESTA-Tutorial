@@ -19,20 +19,25 @@ one should review basic concepts in solid state physics
 #. Reciprocal lattice/Brillouin zone
 
 
-In crystallography, crystal structure is a description of the ordered arrangement of atoms,
-ions or molecules in a crystalline material. Ordered structures occur from the intrinsic nature of the constituent particles to
-form symmetric patterns that repeat along the principal directions of three-dimensional space in matter.
+In crystallography, :yimp:`crystal structure` is a description of the ordered
+arrangement of atoms, ions or molecules in a crystalline material.
+Ordered structures occur from the intrinsic nature of the constituent particles
+to form symmetric patterns that repeat along the principal directions of three-dimensional space in matter.
 
-The smallest group of particles in the material that constitutes this repeating pattern is the unit
-cell of the structure. The unit cell completely reflects the symmetry and structure of the entire crystal,
-which is built up by repetitive translation of the unit cell along its principal axes.
+The smallest group of particles in the material that constitutes this
+repeating pattern is the :yimp:`unit cell` of the structure.
+The unit cell completely reflects the symmetry and structure
+of the entire crystal, which is built up by repetitive translation of
+the unit cell along its principal axes.
 The translation vectors define the nodes of the :yimp:`Bravais lattice`." *Wikipedia*
 
 Lattice
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A crystal structure is formed only when the group of atoms is arranged identically at the lattice point.
-The group of atoms or molecules is called a :yimp:`basis`. Lattice point is actually an **imaginary concept**.
+A crystal structure is formed only when the group of atoms is arranged
+identically at the lattice point. The group of atoms or molecules
+is called a :yimp:`basis`.
+Lattice point is actually an **imaginary concept**.
 
 .. figure:: ./Figs/Basis.jpg
    :width: 220 px
@@ -94,6 +99,27 @@ their midpoints. (Visualize it with xcrysden for your own cif file)
    :width: 400 px
 
 
+.. role:: file
+
+
+Example
+~~~~~~~~~~~~~~~~~~~~~~~
+Open a cif (:download:`./CsPbI3.cif`) file and find :yimp:`lattice constants` and :yimp:`basis vector`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Crystal symmetry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -106,13 +132,11 @@ The space groups in three dimensions are made from combinations of the
    :align: center
 
 
-
 :yimp:`Bilbao Crystallographic Server` is an open access website offering online
 crystallographic database and programs aimed at analyzing, calculating and
 visualizing problems of structural and mathematical crystallography,
 solid state physics and structural chemistry.
 `Visit Bilbao webpage <https://www.cryst.ehu.es/>`_
-
 
 
 Lattice planes and directions in crystals
@@ -132,7 +156,6 @@ Distance between planes for each system can be calculated from
 
 .. figure:: ./Figs/spacingdbetweenthenetplanes.png
    :align: center
-
 
 
 Reciprocal lattice
@@ -161,7 +184,7 @@ in the :yimp:`reciprocal space`, defined by the relations
 **Relation between lattice planes and reciprocal lattice**
 
 Therefore, it appears that the moduli of the perpendicular vectors :math:`\sigma_{hkl}`
-reciprocal to the interplanar spacings. The end points of these vectors
+reciprocal to the :yimp:`interplanar spacings`. The end points of these vectors
 (blue arrows in figure below) also produce a periodic lattice that,
 due to this reciprocal property, is known as the reciprocal lattice of the original direct lattice.
 The reciprocal points obtained in this way (green points in figure below)
