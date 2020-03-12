@@ -156,6 +156,20 @@ in the :yimp:`reciprocal space`, defined by the relations
 
 :yimp:`Brillouin zone` is a uniquely defined primitive cell in reciprocal space.
 
+
+
+**Relation between lattice planes and reciprocal lattice**
+
+Therefore, it appears that the moduli of the perpendicular vectors :math:`\sigma_{hkl}`
+reciprocal to the interplanar spacings. The end points of these vectors
+(blue arrows in figure below) also produce a periodic lattice that,
+due to this reciprocal property, is known as the reciprocal lattice of the original direct lattice.
+The reciprocal points obtained in this way (green points in figure below)
+are identified with the same numerical triplets hkl (Miller indices) which represent the corresponding plane family.
+
+.. figure:: ./Figs/recip9.jpg
+
+
 A Brillouin zone is a particular choice of the unit cell of the
 reciprocal lattice. It is defined as the Wigner-Seitz cell (also
 called Dirichlet or Voronoi domain of influence) of the reciprocal
